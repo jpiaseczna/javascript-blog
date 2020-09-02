@@ -109,4 +109,22 @@ body {
 .post-tags p {
   margin: 0 10px 0 0;
 }
+
+/* Media */
+@media (max-width: 767px) {
+  body {
+    font-size: 18px;
+  }
+  .wrapper {
+    -ms-flex-direction: column;
+        flex-direction: column;
+  }
+  .wrapper :nth-child(1) {
+    -ms-flex-order: 2;
+        order: 2;
+  }
+  .titles, .tags, .author-name {
+    font-size: 20px;
+  }
+}
 /*# sourceMappingURL=style.css.map */
