@@ -2,8 +2,11 @@
 
 /* Variables */
 
-$color-light: #fff;
+$color-light: #d1d8e0;
 $color-dark: #444;
+$color-background: #45aaf2;
+$color-main: #fa8231;
+$color-aside: #26de81;
 
 $font-logo: 'Sacramento', cursive;
 $font-header: 'Oswald', sans-serif;
@@ -50,17 +53,18 @@ body {
 
 .sidebar {
   flex: 1 0 0;
+  background-color: $color-aside;
 }
 
 .posts {
   flex: 2 0 0;
+  background-color: $color-background;
 }
 
 .sidebar, .posts {
-  background: $color-light;
   margin-right: 10px;
   padding: 40px;
-  border: 1px solid $color-dark;
+  border: 2px solid $color-dark;
   border-radius: 5px;
 }
 
@@ -72,6 +76,7 @@ body {
   font-size: 104px;
   line-height: 1;
   text-align: center;
+  color: $color-main;
 }
 
 /* Lists */
