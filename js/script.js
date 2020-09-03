@@ -114,6 +114,8 @@ function generateTags(){
 
     /* make html variable with empty string */
 
+    let html='';
+
     /* get tags from data-tags attribute */
 
     /* split tags into array */
