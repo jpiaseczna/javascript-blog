@@ -118,6 +118,9 @@ function generateTags(){
 
     /* get tags from data-tags attribute */
 
+    const articleTags = article.getAttribute('data-tags');
+    console.log(articleTags);
+
     /* split tags into array */
 
     /* START LOOP: for each tag */
