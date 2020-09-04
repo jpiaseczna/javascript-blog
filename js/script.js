@@ -176,9 +176,14 @@ function tagClickHandler(event){
 
   /* START LOOP: for each active tag link */
 
+  for(let activeTagLink of activeTagLinks) { 
+
     /* remove class active */
 
+    activeTagLink.classList.remove('active');
+
   /* END LOOP: for each active tag link */
+  }
 
   /* find all tag links with "href" attribute equal to the "href" constant */
 
