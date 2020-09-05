@@ -141,7 +141,7 @@ function generateTags() {
 
       /* add generated code to html variable */
 
-      html = html + linkHTML;
+      html = html + linkHTML + (' ');
       console.log(html);
 
       /* END LOOP: for each tag */
@@ -209,7 +209,12 @@ function tagClickHandler(event) {
 }
 
 function addClickListenersToTags() {
+
   /* find all links to tags */
+
+  const tagLinks = document.querySelectorAll('.post-tags a');
+  console.log(tagLinks);
+
   /* START LOOP: for each link */
   /* add tagClickHandler as event listener for that link */
   /* END LOOP: for each link */
