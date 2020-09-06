@@ -55,7 +55,9 @@ function generateTitleLinks(customSelector = '') {
 
   /* for each article */
 
-  const articles = document.querySelectorAll(optArticleSelector + customSelector);
+  const articles = document.querySelectorAll(
+    optArticleSelector + customSelector
+  );
   console.log(customSelector);
   console.log(optArticleSelector + customSelector);
 
@@ -141,7 +143,7 @@ function generateTags() {
 
       /* add generated code to html variable */
 
-      html = html + linkHTML + (' ');
+      html = html + linkHTML + ' ';
       console.log(html);
 
       /* END LOOP: for each tag */
@@ -197,11 +199,10 @@ function tagClickHandler(event) {
   /* START LOOP: for each found tag link */
 
   for (let equalHrefTagLink of equalHrefTagLinks) {
-
-  /* add class active */
+    /* add class active */
     equalHrefTagLink.classList.add('active');
 
-  /* END LOOP: for each found tag link */
+    /* END LOOP: for each found tag link */
   }
 
   /* execute function "generateTitleLinks" with article selector as argument */
@@ -209,7 +210,6 @@ function tagClickHandler(event) {
 }
 
 function addClickListenersToTags() {
-
   /* find all links to tags */
 
   const tagLinks = document.querySelectorAll('.post-tags a');
@@ -218,13 +218,17 @@ function addClickListenersToTags() {
   /* START LOOP: for each link */
 
   for (let tagLink of tagLinks) {
-
-  /* add tagClickHandler as event listener for that link */
+    /* add tagClickHandler as event listener for that link */
 
     tagLink.addEventListener('click', tagClickHandler);
 
-  /* END LOOP: for each link */
+    /* END LOOP: for each link */
   }
 }
 
 addClickListenersToTags();
+
+function generateAuthors() {
+
+  
+}
