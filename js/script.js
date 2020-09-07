@@ -230,15 +230,13 @@ function addClickListenersToTags() {
 addClickListenersToTags();
 
 function generateAuthors() {
-
   /* find all articles */
 
   const articles = document.querySelectorAll(optArticleSelector);
 
   /* START LOOP: for every article: */
 
-  for(let article of articles) {
-
+  for (let article of articles) {
     /* find authors wrapper */
 
     const authorsWrapper = article.querySelector(optAuthorsSelector);
@@ -256,8 +254,12 @@ function generateAuthors() {
     /* generate HTML of the author link */
 
     const linkHTML =
-        '<a href="#author-' + articleAuthor + '"><span>' + articleAuthor + '</span></a>';
-      console.log(linkHTML);
+      '<a href="#author-' +
+      articleAuthor +
+      '"><span>' +
+      articleAuthor +
+      '</span></a>';
+    console.log(linkHTML);
 
     /* add generated code to html variable */
 
@@ -268,7 +270,9 @@ function generateAuthors() {
 
     authorsWrapper.innerHTML = html;
 
-  /* END LOOP: for every article: */  
+    /* END LOOP: for every article: */
   }
-
 }
+
+generateAuthors();
+
