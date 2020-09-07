@@ -107,8 +107,8 @@ generateTitleLinks();
 
 function generateTags() {
 
-  /* [NEW] create a new variable allTags with an empty array */
-  let allTags = [];
+  /* [NEW] create a new variable allTags with an empty object */
+  let allTags = {};
 
   /* find all articles */
 
