@@ -153,10 +153,12 @@ function generateTags() {
       console.log(html);
 
       /* [NEW] check if this link is NOT already in allTags */
-      if(allTags.indexOf(linkHTML) == -1){
+      if(!allTags.hasOwnProperty(tag)){
 
-        /* [NEW] add generated code to allTags array */
-        allTags.push(linkHTML);
+        /* [NEW] add tag to allTags object */
+        allTags[tag] = 1;
+      } else {
+        allTags[tag]++;
       }
           
       /* END LOOP: for each tag */
@@ -173,7 +175,8 @@ function generateTags() {
   const tagList = document.querySelector('.tags');
 
   /* [NEW] add html from allTags to tagList */
-  tagList.innerHTML = allTags.join(' ');
+  // tagList.innerHTML = allTags.join(' ');
+  console.log(allTags);
 }
 
 generateTags();
