@@ -180,7 +180,7 @@ function generateTags() {
 
       /* add generated code to html variable */
 
-      html = html + linkHTML;
+      html = html + linkHTML + ' ';
       console.log(html);
 
       /* [NEW] check if this link is NOT already in allTags */
@@ -299,8 +299,8 @@ function addClickListenersToTags() {
 addClickListenersToTags();
 
 function generateAuthors() {
-  /* [NEW] create a new variable allAuthors with an empty array */
-  let allAuthors = [];
+  /* [NEW] create a new variable allAuthors with an empty object */
+  let allAuthors = {};
 
   /* find all articles */
 
@@ -339,9 +339,12 @@ function generateAuthors() {
     console.log(html);
 
     /* [NEW] check if this link is NOT already in allAuthors */
-      if(allAuthors.indexOf(linkHTML) == -1){
+      if(!allAuthors.hasOwnProperty(author)){
         /* [NEW] add generated code to allAuthors array */
-        allAuthors.push(linkHTML);
+        allAuthors[author] = 1;
+      } else {
+        allAuthors[author]++;
+      }  
 
     /* insert HTML of the author link into the authors wrapper */
 
@@ -353,8 +356,20 @@ function generateAuthors() {
   /* [NEW] find list of authors in right column */
   const authorList = document.querySelector('.authors');
 
-  /* [NEW] add html from allAuthors to authorList */
-  authorList.innerHTML = allAuthors.join(' ');
+  /* [NEW] create variable for all links HTML code */
+  let allAuthorsHTML = '';
+
+  /* [NEW] START LOOP: for each author in allAuthors: */
+  for (let author in allAuthors) {
+    /* [NEW] generate code of a link and add it to allAuthorsHTML */
+
+    allAuthorsHTML += '<li><a href="#author-' + author +'">' + author +' (' + allAuthors[author] + ') </a></li> ';
+  }
+  /* [NEW] END LOOP: for each author in allAuthors: */
+ 
+  /* [NEW] add html from allAuthorsHTML to authorList */
+
+  authorList.innerHTML = allAuthorsHTML;
 }
 
 generateAuthors();
