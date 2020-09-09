@@ -324,16 +324,16 @@ function generateAuthors() {
 
     /* get author from data-author attribute */
 
-    const articleAuthor = article.getAttribute('data-author');
-    console.log(articleAuthor);
+    const author = article.getAttribute('data-author');
+    console.log(author);
 
     /* generate HTML of the author link */
 
     const linkHTML =
       '<a href="#author-' +
-      articleAuthor +
+      author +
       '"><span>' +
-      articleAuthor +
+      author +
       '</span></a>';
     console.log(linkHTML);
 
@@ -344,7 +344,7 @@ function generateAuthors() {
 
     /* [NEW] check if this link is NOT already in allAuthors */
      if (!allAuthors.hasOwnProperty(author)) {
-    /*   [NEW] add generated code to allAuthors array */
+    /*   [NEW] add generated code to allAuthors object */
       allAuthors[author] = 1;
      } else {
        allAuthors[author]++;
@@ -443,7 +443,7 @@ function authorClickHandler(event) {
 function addClickListenersToAuthors() {
   /* find all links to authors */
 
-  const authorLinks = document.querySelectorAll('.post-author a');
+  const authorLinks = document.querySelectorAll('.post-author a, .list.authors a');
   console.log(authorLinks);
 
   /* START LOOP: for each link */
